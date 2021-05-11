@@ -75,7 +75,7 @@ const menu = [
 
 const container = document.querySelector(".btn-container");
 const section = document.querySelector(".section-center");
-//const menuBtns = document.querySelectorAll(".btn");
+
 
 (function () {
   let categories = ["All"];
@@ -93,11 +93,9 @@ const section = document.querySelector(".section-center");
 function filterMenu() {
   Array.from(container.children).forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const categoryMenu = menu.filter((menuItem) => {
-        if (menuItem.category === e.target.textContent) {
-          return menuItem;
-        }
-      });
+       const categoryMenu = menu.filter(
+        (menuItem) => menuItem.category === e.target.textContent
+      );
       if (e.target.textContent === "All") {
         showMenu(menu);
       } else {
